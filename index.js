@@ -8,7 +8,7 @@ import postRoutes from './routes/posts.js';
 const app = express();
 
 var corsOptions = {
-    origin: 'https://create-react-app-1-check.herokuapp.com',
+    origin: 'https://create-react-app-1-check.herokuapp.com/',
 }
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({limit:"30mb",extended:true}));
