@@ -12,7 +12,7 @@ var corsOptions = {
 }
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({limit:"30mb",extended:true}));
-app.use(cors(corsOptions));
+app.use(cors());
 app.get('/',(req,res) => {
     res.send('Welcome to karthik app1')
 })
