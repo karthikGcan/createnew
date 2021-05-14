@@ -18,8 +18,9 @@ router.post('/', async (req,res) => {
     console.log(cbody);
     const newpost = new PostMessage(cbody);
     try {
-        await newpost.save();
-        res.status(201).json(newpost);
+        const verifiedUser = await PostMessage.find(cbody);
+        // await newpost.save();
+        res.status(201).json(verifiedUser);
     } catch (error) {
         res.status(409).json({message:error.message});
     }
