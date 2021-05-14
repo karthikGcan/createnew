@@ -7,10 +7,16 @@ import postRoutes from './routes/posts.js';
 
 const app = express();
 
-app.use('/posts',postRoutes)
+var corsOptions = {
+    origin: 'https://dcb-karthik-deploy.herokuapp.com',
+}
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({limit:"30mb",extended:true}));
-app.use(cors());
+app.use(cors(corsOptions));
+app.get('/',(req,res) => {
+    res.send('Welcome to karthik app')
+})
+app.use('/posts',postRoutes)
 
 //cloud atlas version
 
